@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style>
+        head {
+            background-color:darkgreen;
+        }
+
+        body {
+            background-image: url("HHSelfie.jpg");
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        .container {
+            width: 960px; /* Fixed width for desktop */
+            margin: 0 auto;
+        }
+
+        /* Styles for screens smaller than 768px (e.g., tablets and mobiles) */
+        @media screen and (max-width: 768px) {
+        body {
+            font-size: 14px;
+            margin: 10px;
+            }
+
+        .container {
+            width: 90%; /* Percentage width for responsiveness */
+            padding: 10px;
+            }
+        }
+
+        /* Styles for screens smaller than 480px (e.g., smartphones) */
+        @media screen and (max-width: 480px) {
+        body {
+            font-size: 12px;
+            }
+
+        .container {
+            width: 100%;
+            padding: 5px;
+            }
+        }
+
+        #banner {
+            position: absolute;
+            top: 20px;
+            left: 530px;
+            right: 0px;
+            width: 30%;
+            height: 16%;
+            z-index: -1;
+        }
+
+        /* Default styles for larger screens (desktop first approach) */
+        body {
+            font-size: 16px;
+            margin: 20px;
+        }
+        </style>
+        <script src="JS-code.js">
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>
+            Add Your Task:
+        </h1>
+
+        <input type="text" id="taskInput" placeholder="Enter a task..." />
+        <select id="priorityInput">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+        </select>
+
+         <button onclick="addTask()">Add Task</button>
+
+        <ul id="mytask"></ul>
+
+
+
+
+    </body>
+</html>
