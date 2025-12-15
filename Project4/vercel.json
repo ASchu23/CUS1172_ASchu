@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "restAPI_dev.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "index_dev.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "app_code_dev.js",
+      "use": "@vercel/static"
+    },
+     {
+      "src": "db.json",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/restAPI_dev.js"
+    },
+    {
+      "src": "/",
+      "dest": "/index_dev.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

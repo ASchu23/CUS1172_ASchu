@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        
+        <script src="app_code_dev.js"></script>
+    </head>
+    <body>
+        <form onsubmit="return false;" id="queryform">
+            <label for="nameQuery">Search by name:</label><br>
+            <input type="text" id="nameQuery" name="nameQuery" value=""><br>
+            <input id="queryByName" type="button" onclick="updateView(this)" value="Query" data-querytype="by_name">
+            <hr>
+            <label for="sQuery">Search by age:</label><br>
+            <input type="text" id="startAgeQuery" name="startAgeQuery" value="1"><br>
+            <input type="text" id="endAgeQuery" name="endAgeQuery" value="99"><br>
+            <input id="queryByAge" type="button" onclick="updateView(this)" value="Query" data-querytype="by_age">
+            </form>
+            <div id="results">
+            </div>
+    </body>
+</html>
+
+<script id="show_results_view" type="text/x-handlebars-template">
+    <ul>
+        {{#each employees}}
+        <li> id: {{this.id}} | name: {{this.employee_name}} | salary: ${{this.employee_salary}} | age: {{this.employee_age}} 
+        {{/each}}
+        </li>
+    </ul>
+</script>
